@@ -25,7 +25,7 @@ Build a deskop and mobile layout of NFT preview card.
 
 ### Link
 
-[Solution Link]()
+[Solution Link](https://nft-card-scss.netlify.app/)
 
 ## Process
 
