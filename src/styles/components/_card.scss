@@ -1,0 +1,149 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+.card {
+  padding: rem(18);
+  border-radius: $border-radius-card;
+  background-color: $theme-card-bg;
+  max-width: rem(327);
+  display: grid;
+  row-gap: rem(16);
+
+  @include breakpoint(cmpct) {
+    max-width: rem(350);
+  }
+
+  &__img {
+    border-radius: $border-radius-img;
+    height: $card-img-height-sm;
+
+    @include breakpoint(cmpct) {
+      height: $card-img-height;
+    }
+  }
+
+  &__img-content {
+    position: relative;
+
+    &-bg {
+      display: grid;
+      place-items: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: $border-radius-card;
+      transition: $base-transition;
+    }
+
+    &-bg::after {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      transition: $base-transition;
+      border-radius: rem(8);
+      content: '';
+      position: absolute;
+    }
+
+    &-bg:hover::after {
+      background-color: $theme-accent;
+      opacity: 0.3;
+    }
+
+    &-view {
+      transition: $base-transition;
+      opacity: 0;
+      width: 10%;
+      height: 10%;
+    }
+
+    &-bg:hover &-view {
+      opacity: 1;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+
+    &:hover {
+      color: $theme-accent;
+    }
+  }
+
+  &__name {
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+    margin-bottom: rem(12);
+    font-size: $heading-font-size;
+  }
+
+  &__desc {
+    color: $theme-text-secondary;
+    line-height: $para-line-height;
+    font-size: $para-font-size;
+    font-family: $para-font-weight;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: rem(6);
+  }
+
+  &__cost {
+    color: $theme-accent;
+    font-size: $font-size-info;
+    line-height: $line-height-info;
+  }
+
+  &__time {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: rem(6);
+  }
+
+  &__time-text {
+    color: $theme-text-secondary;
+    font-size: $font-size-info;
+    line-height: $line-height-info;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: rem(16);
+  }
+
+  &__creator {
+    height: $user-icon-height;
+    width: $user-icon-height;
+    border-radius: 50%;
+  }
+
+  &__creator-info {
+    display: inline-block;
+    color: $theme-text-secondary;
+  }
+
+  &__creator-name {
+    color: $theme-text-primary;
+
+    &:hover {
+      color: $theme-accent;
+    }
+  }
+}
