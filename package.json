@@ -4,9 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "private": "true",
-  "scripts": {
-    "start": "yarn gulp"
-  },
   "dependencies": {
     "@babel/core": "^7.16.10",
     "@babel/preset-env": "^7.16.10",
